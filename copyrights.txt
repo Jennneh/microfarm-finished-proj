@@ -1,0 +1,26 @@
+Links to images used in the website.
+
+Pixelbay is a store of free image or video to download and use for anything. 
+Free for commercial use | No attribution required | High quality images
+
+This project is entirely for educational purposes and will not actually be used for commercial use.
+
+Photos used:
+
+Landing page:
+Slider 1 = https://pixabay.com/photos/countryside-sunset-landscape-1149680/
+Slider 2 = https://pixabay.com/photos/table-wood-fresh-organic-healthy-2879213/
+Slider 3 = https://pixabay.com/photos/peasant-rice-fields-rice-crops-452904/
+About = https://pixabay.com/photos/yorkshire-autumn-sunshine-morning-2900064/
+
+Sign up/in pages:
+Background = https://pixabay.com/photos/countryside-harvest-agriculture-2326787/
+
+Dashboard Pages:
+Background = https://pixabay.com/photos/agriculture-cropland-farm-farmland-1867212/
+
+Billing Picture = https://dlpng.com/png/6487994
+Handshake Picture = https://www.pngitem.com/middle/oRowJJ_transparent-active-listening-clipart-hands-shaking-clip-art/
+
+
+

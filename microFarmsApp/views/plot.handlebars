@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> topbar}}
+    {{> header}}
+    <div class="container">
+        <br><br><br>
+        <div class="titleContainer">
+            <div class="dashboardTitle">
+                <h1>Your Plot - <b><span id="plot-id"></span></b></h1>
+            </div>
+        </div>
+        <section id="services" class="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <h4><a href="">Your Documents</a></h4>
+                            <p>View all the documents related to the rental of this plot.</p>
+                            <br>
+                            <ul class="list-group" id="docs-list">
+                            </ul>
+                            <br>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <h4><a href="">Services/Amenities</a></h4>
+                            <p>View all the services/amenties avaliable at this plot.</p>
+                            <br>
+                            <ul class="list-group" id="amenity-list">
+                            </ul>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <h4><a href="">Plot Produce</a></h4>
+                            <p>Please select what produce you're making here!</p>
+                            <div class="container">
+              <p>
+                <hr>
+                <input class="form-control" id="searchProduce" type="text" placeholder="Search..">
+                <hr>
+              <div class="list-group availiableProduce" id="produceList" style="height: 150px;">
+
+                <!-- Possible vegetals: Artichokes Asparagus Aubergine Beetroot Broccoli Brussel Sprouts Cabbages Carrots
+                    Cauliflower Celery Courgettes Cucumber Garlic Ginger Leeks Lettuce Melon Mushrooms
+                    Onion Parsnips Peas Potatoes Pumpkins Radish Rhubarb Spinach Spring onion Swede Tomatoes
+                    Turnip Yam  -->
+                
+              </div>
+                                <button type="button" class="btn btn-success" id="setProduce" onclick="saveProduce(producedItems)">Save Produce</button>
+            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <br>
+                        <div class="icon-box">
+                            <h4><a href="">Plot Location</a></h4>
+                            <div id="map" style="width: 300px; margin: auto; height: 330px;"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <br>
+                        <div class="icon-box">
+                            <h4><a href="">Contact Your Landowner</a></h4>
+                            <p>Any questions about this plot, contact the landowner now.</p>
+                            <br>
+                            <h6>Email: <span id="landowner-email"></span></h6>
+                            <h6>Phone: <span id="landowner-phone"></span></h6>
+                            <br><br>
+                            <img src="partials/assets/img/handshake.png" alt="Cover Photos" width="0" height="150">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <br>
+                        <div class="icon-box">
+                            <h4><a href="">Billing</a></h4>
+                            <p>Current billing status and plot agreement start date.</p>
+                            <br>
+                            <h6 id="billAmt"></h6>
+                            <h6 id="billDate"></h6>
+                            <br>
+                            <img src="partials/assets/img/billing.png" alt="Cover Photos" width="250" height="150">
+                            <h6 id="cancelInfo"></h6>
+                            <button type="button" class="btn btn-danger" id="cancelPlot">Cancel This Plot</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    {{> footer}}
+    {{> backtotop}}
+</body>
+<!-- Custom -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="static/map-assets/bing.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+<script src="static/jquery.cookie.js"></script>
+<script src="static/envSwitcher.js"></script>
+<script src="/static/dashboard-assets/js/main.js"></script>
+<script src="/static/plot.js"></script>
+<link href="static/dashboard-assets/css/style.css" rel="stylesheet">
+
+    <script>
+    $(document).ready(function () {
+      $("#searchProduce").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#produceList label").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $("#searchTenant").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#tenantList label").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+        
+    
+  </script>
+
+    
+</html>

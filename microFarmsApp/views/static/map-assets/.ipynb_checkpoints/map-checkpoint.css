@@ -1,0 +1,216 @@
+body {
+  background: url("../../../partials/assets/img/dashboard-background.jpg")
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  background-color: #ffffff;
+}
+
+#map {
+  min-height: 750px;
+  height: 70vh;
+  z-index: 1;
+}
+
+.layer-info {
+  width: 100%;
+  height: 40px;
+}
+
+#mapSearchContainer {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  height: 30px;
+  width: 180px;
+  z-index: 110;
+  font-size: 10pt;
+  color: #5d5d5d;
+  border: solid 1px #bbb;
+  background-color: #f8f8f8;
+}
+
+#send-button {
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  background-color: rgb(53, 99, 70);
+  color: white;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.layer-info {
+  width: 100%;
+  height: 32px;
+  border-bottom: 2px rgb(110, 110, 110) solid;
+}
+
+#input-container {
+  width: 100%;
+}
+
+#land-name {
+  font-family: inherit;
+  font-size: 20px;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: #d2e0d2;
+  border-bottom: 2px rgb(23, 94, 50) solid;
+}
+
+#land-amenities {
+  font-family: inherit;
+  font-size: 17px;
+  outline: none;
+  -webkit-appearance: none;
+  padding: 0;
+  padding-left: 4px;
+  width: 100%;
+  height: 30px;
+  border: none;
+  margin: 0;
+  background-color: #d2e0d2;
+  border-bottom: 2px rgb(23, 94, 50) solid;
+}
+
+.plot-name {
+  outline: none;
+  font-family: inherit;
+  float: left;
+  -webkit-appearance: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 4px;
+  width: calc(35% - 10px);
+  height: 30px;
+  background-color: #d4d4d4;
+}
+
+.plot-price {
+  outline: none;
+  font-family: inherit;
+  float: left;
+  -webkit-appearance: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 4px;
+  width: calc(35% - 10px);
+  height: 30px;
+  background-color: #d4d4d4;
+  border-left: 1px rgb(144, 180, 155) solid;
+}
+
+.leaflet-div-icon {
+  border-radius: 5px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border: none !important;
+  margin: -5px !important;
+  background-color: #ffffff !important;
+}
+
+.area {
+  width: calc(15% - 5px);
+  outline: none;
+  float: left;
+  -webkit-appearance: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 4px;
+  height: 30px;
+  background-color: #d4d4d4;
+  border-left: 1px rgb(144, 180, 155) solid;
+  line-height: 1.9;
+  color: #3f3f3f;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.del-button-container {
+  float: left;
+  background-color: #d4d4d4;
+  width: 30px;
+  height: 30px;
+}
+
+.del-button {
+  color: white;
+  background-color: rgb(249, 62, 62);
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.remove-icon {
+  margin-top: -2px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Pattern styles */
+.container-b {
+  min-height: calc(40vh + 90px);
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 110px;
+  padding: 20px, 20px, 20px, 20px;
+}
+
+.map-container {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  float: left;
+  border-right: 3px rgb(23, 94, 50) solid;
+}
+
+.tutorial {
+  background-color: white;
+  color: black;
+  min-height: calc(70vh + 90px);
+  width: 100%;
+  margin-left: 60%;
+  padding: 20px;
+  align-items: center;
+}
+
+h5 {
+  /* background-color: #3f3f3f; */
+  padding-left: 30px;
+  width: 50%;
+  text-align: auto;
+}
+
+.gif {
+  width: 500px;
+  padding-left: 30px;
+}
+
+.spacer {
+  height: 30px;
+  background-color: #090909;
+}
+
+.leaflet-control-layers-expanded {
+  height: 65px !important;
+}
+
+.leaflet-control-layers-list {
+  margin-top: -60px;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+
+<body>
+
+  {{> topbar}}
+  {{> header}}
+
+  <!-- Page Content -->
+  <div class="container">
+    <br><br><br>
+    <div class="titleContainer">
+      <div class="dashboardTitle">
+        <h1>Suppliers dashboard</h1>
+      </div>
+    </div>
+    <br>
+    <!-- Dashboard Cards -->
+    <div class="card-deck">
+      <div class="card icon-box">
+        <div class="card-body text-center">
+          <p class="card-text">
+            <div class="icon-box">
+              <h4><a href="">Current deals with landowners</a></h4></p>
+              <p>All of your active transactions</p>
+            [SAMPLE DATA]
+              <div class="container">
+                <p>
+                <hr>                  
+              </div>
+              <br>
+            </div>
+        </div>
+      </div>
+      
+      <div class="card icon-box">
+        <div class="card-body text-center">
+          <p class="card-text">
+            <div class="icon-box">
+              <h4><a href="">Items selling currently</a></h4></p>
+              <p>All of the items you sell</p>
+              <div class="container">
+                <p>
+                <hr>                  
+                  <input class="form-control" id="searchProduce" type="text" placeholder="Search..">
+                <hr>
+                  
+                <div class="list-group availiableProduce" id="itemList">
+                    
+                  </div>
+                  
+            </div>
+              <br>
+            </div>
+                    <button type="button" class="btn btn-success btn-block" onclick="saveSelling(sellingItems)">Submit</button>
+        </div>
+      </div>
+      
+      <div class="card icon-box">
+        <div class="card-body text-center">
+          <p class="card-text">
+            <div class="icon-box">
+              <h4><a href="">Local Land</a></h4></p>
+              Land near you. Contact the owner to offer new deals for their land. <br>[SAMPLE DATA]
+              <div class="container">
+                <hr>
+                <input class="form-control" id="searchTenant" type="text" placeholder="Search..">
+                <hr>
+                  <div class="list-group tenantProduce" id="tenantList">
+                    <label class="list-group-item" onclick="contactLandowner">
+                      <div class="icon-tooltip">
+                        water, wifi, gas electricity
+                        <span class="icon-tooltiptext">Current Services available here</span>
+                      </div>
+                      <span class="badge badge-primary badge-pill">
+                        land-name/landowner-name
+                      </span>
+                    </label>
+
+                    <label class="list-group-item" onclick="contactLandowner">
+                      <div class="icon-tooltip">
+                        water, wifi
+                        <span class="icon-tooltiptext">Current Services available here</span>
+                      </div>
+                      <span class="badge badge-primary badge-pill">
+                        land-name/landowner-name
+                      </span>
+                    </label>
+
+                    <label class="list-group-item" onclick="contactLandowner">
+                      <div class="icon-tooltip">
+                        gas electricity
+                        <span class="icon-tooltiptext">Current Services available here</span>
+                      </div>
+                      <span class="badge badge-primary badge-pill">
+                      land-name/landowner-name
+                      </span>
+                    </label>
+
+                    <label class="list-group-item" onclick="contactLandowner">
+                      <div class="icon-tooltip">
+                        seeds, compost
+                        <span class="icon-tooltiptext">Current Services available here</span>
+                      </div>
+                      <span class="badge badge-primary badge-pill">
+                      land-name/landowner-name
+                      </span>
+                    </label>
+
+                    <label class="list-group-item" onclick="contactLandowner">
+                      <div class="icon-tooltip">
+                        weed killer, insecticide
+                        <span class="icon-tooltiptext">Current Services available here</span>
+                      </div>
+                      <span class="badge badge-primary badge-pill">
+                      land-name/landowner-name
+                      </span>
+                    </label>
+
+                  </div>
+              </div>
+              <br><br><br><br>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <br><br>
+  <script>
+    $(document).ready(function(){
+      $("#searchProduce").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#produceList label").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+    $(document).ready(function(){
+      $("#searchTenant").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tenantList label").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+      
+    $(document).ready(function(){
+      $("#otherList").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#otherList label").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
+  {{> footer}}
+  {{> backtotop}}
+</body>
+
+<!-- Custom -->
+<script src="static/jquery.cookie.js"></script>
+<script src="static/supplier-dashboard-assets/js/supplier.js"></script>
+<script src="static/envSwitcher.js"></script>
+<script src="static/buyer-supplier-assets/js/script.js"></script>
+<link href="static/dashboard-assets/css/style.css" rel="stylesheet">
+
+</html>

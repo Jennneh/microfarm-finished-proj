@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> topbar}}
+    {{> header}}
+    <div class="container">
+        <br><br><br>
+        <div class="titleContainer">
+            <div class="dashboardTitle">
+                <h1>Landowners Dashboard</h1>
+            </div>
+        </div>
+        <section id="services" class="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 align-items-stretch">
+                        <div class="icon-box">
+                            <h4>Your Land</h4>
+                            <p>This is a list of the land you have already added to the
+                                site using our land division tool. This may be empty if you havent added any land yet.
+                            </p>
+                            <br>
+                            <ul class="list-group" id="land-list">
+                            </ul>
+                            <br>
+                            <p>Add new land and divide it into plots.</p>
+                            <button type="button" class="btn btn-success btn-sm" onclick="window.location.href='/landDivision'">Add new plots</button>
+                            
+                        </div>
+                    </div>
+                    <div class=" col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box ">
+                            <h4>Expenses and Billing</h4>
+                            <p>Here you can find billing information. For a full payment breakdown, download a copy of
+                                your
+                                landowner / tenant agreement using the button below.</p>
+                            <br>
+                            <ul class="list-group" id="bill-list">
+                            </ul>
+                            <br>
+                            <p>Want to see your plot document agreements? </p>
+                            <button type="button" class="btn btn-success btn-sm" href="/dashboard" disabled>Coming
+                                Soon</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <h4><a href="">Your Plots</a></h4>
+                            <p>Here you can see each individual plot from your land. View the details of each plot and
+                                its current status. Click on any plot to see further details about that plot.
+                            </p>
+                            <br>
+                            <ul class="list-group" id="plot-list">
+                            </ul>
+                            <br>
+                            <p>Want to see your plot document agreements? </p>
+                            <button type="button" class="btn btn-success btn-sm" href="/dashboard" disabled>Coming
+                                Soon</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4">
+                        <div class="icon-box ">
+                            <h4>Interested Suppliers</h4>
+                            <p>Here are suppliers for all of the amenities you can imagine! Their contact details can be found below</p>
+                            <p id='supplier-phone'></p>
+                            <p id='supplier-email'></p>
+                            <br id="noPart">
+                            <ul class="list-group" id="waiting-list" style="height: 55%">
+                            </ul>
+                            <br>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4">
+                        <div class="icon-box ">
+                            <h4>Support and User Guide</h4>
+                            <p>Our user guide contains
+                                all the details you need to use our service. It also contains information on how to
+                                contact us if you are still stuck.</p>
+                            <img src="partials/assets/img/user-guide.png" alt="Cover Photos" width="125" height="150">
+                            <p>View the MicroFarm Management Sytem user guide. </p>
+                            <form method="get" action="partials/assets/user-guide/user-guide.pdf">
+                                <button type="submit" class="btn btn-success btn-sm">View User Guide</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4">
+                        <div class="icon-box ">
+                            <h4>Maintenance Tickets</h4>
+                            <p>A list of maintenance tickets can be found below. Click on a ticket to learn more about
+                                each issue.</p>
+                            <br>
+                            <ul class="list-group" id="waiting-list">
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+    </div>
+    {{> footer}}
+    {{> backtotop}}
+</body>
+<!-- Custom -->
+<script src="/static/dashboard-assets/js/main.js"></script>
+<script src="static/jquery.cookie.js"></script>
+<script src="static/envSwitcher.js"></script>
+<script src="static/landowner-dashboard-assets/js/landownerDashboard.js"></script>
+<link href="static/dashboard-assets/css/style.css" rel="stylesheet">
+
+</html>

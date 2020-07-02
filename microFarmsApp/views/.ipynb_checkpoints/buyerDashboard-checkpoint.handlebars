@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+
+<body>
+
+  {{> topbar}}
+  {{> header}}
+
+  <!-- Page Content -->
+  <div class="container">
+    <br><br><br>
+    <div class="titleContainer">
+      <div class="dashboardTitle">
+        <h1>Buyers Dashboard</h1>
+      </div>
+    </div>
+    <br>
+    <!-- Dashboard Cards -->
+    <div class="card-deck">
+      <div class="card icon-box">
+        <div class="card-body text-center">
+          <p class="card-text">
+          <div class="icon-box">
+            <h4><a href="">Produce you are interested in</a></h4>
+            </p>
+            <p> Let local farmers know what produce you would like</p>
+            <div class="container">
+              <p>
+                <hr>
+                <input class="form-control" id="searchProduce" type="text" placeholder="Search..">
+                <hr>
+              <div class="list-group availiableProduce" id="produceList">
+<!--                 <input type="checkbox" name="CheckBoxInputName" value="Carrots" id="CheckBox1" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox1">Carrots</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Parsnips" id="CheckBox2" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox2">Parsnips</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Potatoes" id="CheckBox3" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox3">Potatoes</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Tomatoes" id="CheckBox4" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox4">Tomatoes</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Strawberries" id="CheckBox5" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox5">Strawberries</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Raspberries" id="CheckBox6" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox6">Raspberries</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Beans" id="CheckBox7" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox7">Beans</label>
+
+                <input type="checkbox" name="CheckBoxInputName" value="Sweet Peas" id="CheckBox8" onclick="checkAddress(this)"/>
+                <label class="list-group-item" for="CheckBox8">Sweet Peas</label> -->
+
+                <!-- Possible vegetals: Artichokes Asparagus Aubergine Beetroot Broccoli Brussel Sprouts Cabbages Carrots
+                    Cauliflower Celery Courgettes Cucumber Garlic Ginger Leeks Lettuce Melon Mushrooms
+                    Onion Parsnips Peas Potatoes Pumpkins Radish Rhubarb Spinach Spring onion Swede Tomatoes
+                    Turnip Yam  -->
+                
+              </div>
+            </div>
+            <br>
+            <hr>
+          </div>
+          <button type="button" class="btn btn-success btn-block" onclick="saveProduce(buyingItems)">Submit</button>
+        </div>
+      </div>
+      <div class="card icon-box">
+        <div class="card-body text-center">
+          <p class="card-text">
+          <div class="icon-box">
+            <h4><a href="">Locally availiable produce</a></h4>
+            </p>
+            Search for produce and contact local farmers [SAMPLE DATA]
+            <div class="container">
+              <hr>
+              <input class="form-control" id="searchTenant" type="text" placeholder="Search..">
+              <hr>
+              <div class="list-group tenantProduce" id="tenantList">
+                <input type="checkbox" name="CheckBoxInputName" id="advert01" />
+                <label class="list-group-item">Parsnips <span
+                    class="badge badge-primary badge-pill">tenant-user-name</span></label>
+
+                <input type="checkbox" name="CheckBoxInputName" id="advert02" />
+                <label class="list-group-item">Sweet Peas <span
+                    class="badge badge-primary badge-pill">tenant-user-name</span></label>
+
+                <input type="checkbox" name="CheckBoxInputName" id="advert03" />
+                <label class="list-group-item">Parsnips <span
+                    class="badge badge-primary badge-pill">tenant-user-name</span></label>
+
+                <input type="checkbox" name="CheckBoxInputName" id="advert04" />
+                <label class="list-group-item">Potatoes <span
+                    class="badge badge-primary badge-pill">tenant-user-name</span></label>
+
+                <input type="checkbox" name="CheckBoxInputName" id="advert05" />
+                <label class="list-group-item">Turnips <span
+                    class="badge badge-primary badge-pill">tenant-user-name</span></label>
+              </div>
+            </div>
+            <br><br><br><br>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <br><br>
+  {{> footer}}
+  {{> backtotop}}
+
+  <script>
+    $(document).ready(function () {
+      $("#searchProduce").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#produceList label").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $("#searchTenant").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#tenantList label").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+
+</body>
+
+<!-- Custom -->
+<script src="static/jquery.cookie.js"></script>
+<script src="static/envSwitcher.js"></script>
+<script src="static/buyer-supplier-assets/js/script.js"></script>
+<script src="/static/buyer-dashboard-assets/js/buyer-dashboard.js"></script>
+<link href="static/dashboard-assets/css/style.css" rel="stylesheet">
+
+</html>

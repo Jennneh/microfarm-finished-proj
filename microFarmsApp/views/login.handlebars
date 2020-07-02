@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MicroFarm - Login/Signup</title>
+    <link rel="stylesheet" href="/static/login-assets/css/style.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                {{!-- <form action="/register" class="register-form" method="POST" enctype="application/json"> --}}
+                <input id="rusername" type="text" name="rusername" placeholder="name" />
+                <input id="rpassword" type="password" name="rpassword" placeholder="password" />
+                <input id="remail" type="text" name="email" placeholder="email address" />
+                <input id="rphonenumber" type="text" name="phonenumber" placeholder="phone number" />
+
+                <select id="rselect" name="role" class="form-control">
+                    <option value="null" disabled selected>Choose Your Account</option>
+                    <option value="tenant">I am a Tenant</option>
+                    <option value="landowner">I am a Landowner</option>
+                    <option value="supplier">I am a Supplier</option>
+                    <option value="buyer">I am a Buyer</option>
+                </select>
+                <button id="register-submit">create</button>
+                <p class="message">Already registered? <a href="#" style="{{{ woop }}}">Sign In</a></p>
+            </form>
+            <form action="/login" class="login-form" method="POST" enctype="application/json">
+                <input type="text" name="username" placeholder="username" />
+                <input type="password" name="password" placeholder="password" />
+                <button>login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+        </div>
+        <div class="status-message visible-false {{{ class }}}">{{{ message }}}</div>
+    </div>
+
+    <!-- partial -->
+    <script src='partials/assets/vendor/jquery/jquery.min.js'></script>
+    <script src="static/login-assets/js/login.js"></script>
+</body>
+
+</html>

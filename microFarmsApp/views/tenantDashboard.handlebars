@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+
+<body>
+    {{> topbar}}
+    {{> header}}
+    <div class="container">
+        <br><br><br>
+        <div class="titleContainer">
+            <div class="dashboardTitle">
+                <h1>Tenants Dashboard</h1>
+            </div>
+        </div>
+        <section id="services" class="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 align-items-stretch">
+                        <div class="icon-box">
+                            <h4>Your Plots</h4>
+                            <p>The plots you own can be found below. Click on each plot to navigate to your plot
+                                management interface.</p>
+                            <br>
+                            <ul class="list-group" id="plot-list">
+                            </ul>
+                            <br>
+                            <p>Haven't got any plots or wanting more? </p>
+                            <button type="button" class="btn btn-success btn-sm"
+                                onclick="window.location.href='/browsePlots'">Browse
+                                Avaliable
+                                Land</a>
+                        </div>
+                    </div>
+
+                    <div class=" col-lg-4 col-md-6 align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box ">
+                            <h4>Annual Expenses and Billing</h4>
+                            <p>For a full payment breakdown, download a copy of your
+                                tenancy agreement using the button below.</p>
+                            <br>
+                            <ul class="list-group" id="bill-list">
+                            </ul>
+                            <br>
+                            <p>Want to see your plot document agreements? </p>
+                            <button type="button" class="btn btn-success btn-sm" href="/dashboard" disabled>Coming
+                                Soon</button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <h4>Interested Buyers</h4>
+                            <p>Help sustain the community by becoming a supplier to local Microfarms. Advertise your
+                                service locally
+                                or across the country.</p>
+                            <br>
+                            <p id='buyer-phone'></p>
+                            <p id='buyer-email'></p>
+                            <ul class="list-group" id="buyer-list">
+                            </ul>
+                            <br id="noPart">
+                            <p>Want a portal to sell your produce? </p>
+                            <button type="button" class="btn btn-success btn-sm" href="/dashboard" disabled>Coming
+                                Soon</button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4">
+                        <div class="icon-box ">
+                            <h4>Supplier Advertisements</h4>
+                            <p>Upgrade any meal using locally produced ingredients grown with love. Use our
+                                interface to
+                                look for your
+                                favourite sellers or produce.</p>
+                            <br><br><br><br><br><br>
+                            <p>View interested suppliers using the button below. </p>
+                            <button type="button" class="btn btn-success btn-sm" href="/dashboard" disabled>Coming
+                                Soon</button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4">
+                        <div class="icon-box ">
+                            <h4>Support and User Guide</h4>
+                            <p>Our user guide contains
+                                all the details you need to use our service. It also contains information on how to
+                                contact us if you are still stuck.</p>
+                            <img src="partials/assets/img/user-guide.png" alt="Cover Photos" width="125" height="150">
+                            <p>View the MicroFarm Management Sytem user guide. </p>
+                            <form method="get" action="partials/assets/user-guide/user-guide.pdf">
+                                <button type="submit" class="btn btn-success btn-sm">View User Guide</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 align-items-stretch mt-4">
+                        <div class="icon-box ">
+                            <h4>Report an Issue</h4>
+                            <p>Have an issue? Our maintenance ticketing service below will allow you to quickly report
+                                issues to your landowner.</p>
+                            <br>
+                            <form action="">
+                                <label for=" contact">I wish to be contacted via</label><br>
+                                <select id="contact" name="contact">
+                                    <option value="phone">Phone</option>
+                                    <option value="email">Email</option>
+                                </select>
+                                <label for="issue">to help with my issue of:</label><br>
+                                <textarea name="message" rows="5" cols="30">Please explain your issue here.</textarea>
+                                <br>
+                                <input type="submit" class="btn btn-success btn-sm" value="Submit Ticket"
+                                    onclick="alert('This feature is coming soon.')">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    {{> footer}}
+    {{> backtotop}}
+</body>
+<!-- Custom -->
+<link href="static/dashboard-assets/css/style.css" rel="stylesheet">
+<script src="static/dashboard-assets/js/main.js"></script>
+<script src="static/jquery.cookie.js"></script>
+<script src="static/envSwitcher.js"></script>
+<script src="static/tenant-dashboard-assets/js/tenantDashboard.js"></script>
+
+</html>

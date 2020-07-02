@@ -58,6 +58,3 @@ With <RequestName> being the required requests, found in the ***[API Docs](/docs
 ## Contributing
 
 Please make sure to update tests as appropriate.
-
-## License
-lol who needs a license for uni work
